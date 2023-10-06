@@ -1,0 +1,52 @@
+{% extends "base.html" %}
+
+{% include "navbar.html" %}
+
+{% block content %}
+
+        <div class="container">
+            <div class="row mt-50">
+                <div class="col-md-8 col-md-offset-2">
+                    <h2 class="text-center heading-separator" style="color:white">Enter IMC Credentials</h2>
+                    <form method="POST" action="{{ url_for('.add_imc_creds_post')}}">
+                        <div class="row"><br><br><br><br>
+                          <div>
+                            <p style="color:red">  {{ message }}  </p>
+                          </div>
+                            <div class="col-sm-12">
+                                <div class="form-group">
+                                  <label for="imc_name" style="color:white">IMC Host Name:</label>
+                                  <input type="text" required placeholder="IMC Name" class="form-control" id="imc_name" name="imc_name">
+                                </div>
+                            </div>
+                            <div class="col-sm-12">
+                                <div class="form-group">
+                                  <label for="imc_ip" style="color:white">IMC IP:</label>
+                                  <input type="text" required placeholder="192.168.1.1" class="form-control" id="imc_ip" name="imc_ip">
+                                </div>
+                            </div>
+                            <div class="col-sm-12">
+                                <div class="form-group">
+                                  <label for="imc_user" style="color:white">IMC User:</label>
+                                  <input type="text" required placeholder="admin" class="form-control" id="imc_user" name="imc_user">
+                                </div>
+                            </div>
+                            <div class="col-sm-12">
+                                <div class="form-group">
+                                  <label for="imc_password" style="color:white">IMC Password:</label>
+                                  <input type="password" required placeholder="imc_password" class="form-control" id="imc_password" name="imc_password">
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="text-center mt-20">
+                            <button class="btn btn-green">Save IMC Credentials</button>
+                        </div>
+                    </form>
+                </div>
+            </div><
+
+
+
+
+  {% endblock %}

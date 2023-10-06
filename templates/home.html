@@ -1,0 +1,61 @@
+{% extends "base.html" %}
+
+{% include "navbar.html" %}
+
+{% block content %}
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <div class="container">
+
+            <div class="row mt-50">
+                <div class="col-md-8 col-md-offset-2"><br><br><br>
+                    <h2 class="text-center heading-separator" style="color:white" >IMC to Clearpass Device Transfer</h2>
+                    <form method="POST" action="{{ url_for('.transfer_warn')}}">
+                      <div class="col-sm-12">
+                        <label for="message" style="color:white">System Message:</label>
+                        <input type="text" readonly class="form-control" id="message" name="message" value="{{message}}">
+                          <hr>
+                          <div>
+                          <label for="source" class="col-sm-2" style="color:white" control-label> Source IMC </label>
+                          <select class="selectpicker" name="source">
+                            {% for imc in imc_list %}
+                                <option value={{ imc }}>{{ imc }}</option>
+                            {% endfor %}
+                          </select>
+                          </div>
+                          <br><br>
+                          <div>
+                          <label for="source" class="col-sm-2" style="color:white" control-label> Destination Clearpass</label>
+                          <select class="selectpicker" name="destination">
+                            {% for cp in cp_list %}
+                                <option value={{ cp }}>{{ cp }}</option>
+                            {% endfor %}
+                          </select>
+                          <br><br>
+                          </div>
+                      </div>
+                      <br>
+                      <hr>
+                        <div class="text-center mt-20">
+                            <button class="btn btn-blue">Initiate Transfer</button>
+                        </div>
+                    </form>
+                </div>
+            </div><
+
+
+
+
+  {% endblock %}
+
+  {% block scripts %}
+  <script>
+    $(document).ready(function() {
+    var table = $('#example').DataTable( {
+        dom: 'Bfrtip',
+        select: true
+    } );
+} );
+
+  </script>
+  {% endblock %}

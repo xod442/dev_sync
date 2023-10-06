@@ -1,0 +1,52 @@
+{% extends "base.html" %}
+
+{% include "navbar.html" %}
+
+{% block content %}
+
+        <div class="container">
+            <div class="row mt-50">
+                <div class="col-md-8 col-md-offset-2">
+                    <h2 class="text-center heading-separator" style="color:white">Enter Clearpass Credentials</h2>
+                    <form method="POST" action="{{ url_for('.add_cp_creds_post')}}">
+                        <div class="row"><br><br><br><br>
+                          <div>
+                            <p style="color:red">  {{ message }}  </p>
+                          </div>
+                            <div class="col-sm-12">
+                                <div class="form-group">
+                                  <label for="cp_name" style="color:white">Clearpass Host Name:</label>
+                                  <input type="text" required placeholder="Clearpass Name" class="form-control" id="cp_name" name="cp_name">
+                                </div>
+                            </div>
+                            <div class="col-sm-12">
+                                <div class="form-group">
+                                  <label for="cp_ip" style="color:white">Clearpass IP:</label>
+                                  <input type="text" required placeholder="192.168.1.1" class="form-control" id="cp_ip" name="cp_ip">
+                                </div>
+                            </div>
+                            <div class="col-sm-12">
+                                <div class="form-group">
+                                  <label for="cp_user" style="color:white">Clearpass User:</label>
+                                  <input type="text" required placeholder="admin" class="form-control" id="cp_user" name="cp_user">
+                                </div>
+                            </div>
+                            <div class="col-sm-12">
+                                <div class="form-group">
+                                  <label for="cp_password" style="color:white">Clearpass Password:</label>
+                                  <input type="password" required placeholder="cp_password" class="form-control" id="cp_password" name="cp_password">
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="text-center mt-20">
+                            <button class="btn btn-green">Save Clearpass Credentials</button>
+                        </div>
+                    </form>
+                </div>
+            </div><
+
+
+
+
+  {% endblock %}
