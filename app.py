@@ -158,7 +158,7 @@ def add_imc_creds_post():
 
     message = "IMC credentials for %s have been saved in the database" % (entry["imc_ip"])
     logging.warning(message)
-    return render_template('home.html', message=message)
+    return redirect(url_for('home', message=message))
 
 '''
 #-------------------------------------------------------------------------------
@@ -190,7 +190,7 @@ def add_cp_creds_post():
 
     message = "Clearpass credentials for %s have been saved in the database" % (entry["cp_ip"])
     logging.warning(message)
-    return render_template('home.html', message=message)
+    return redirect(url_for('home', message=message))
 
 
 '''
@@ -208,6 +208,9 @@ def transfer_warn():
 
 @app.route("/transfer", methods=('GET', 'POST'))
 def transfer():
+
+    tacacs = request.form['tacacs']
+
     source = request.form['source']
     temp = source.split('-')
     number = temp[0]
@@ -230,9 +233,10 @@ def transfer():
                cp[0]['cp_user'],
                cp[0]['cp_password']]
 
-    #transfer_devs(imc_info,cp_info)
+    message, count  = transfer_devs(imc_info,cp_info,tacacs)
 
-    message = "Devices have been transfered between %s and %s" % (imc_info[1], cp_info[1])
+    # message = "Devices have been transfered between %s and %s" % (imc_info[1], cp_info[1])
     logging.warning(message)
+    logging.warning(count)
 
     return redirect(url_for('home', message=message))

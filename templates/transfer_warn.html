@@ -9,9 +9,13 @@
                         <h2 class="text-center heading-separator" style="color:white">WARNING!</h2>
                         <form method="POST" action="{{ url_for('.transfer')}}">
                             <div class="row">
-                                <br><br><br><h2 style="color:white">You are about to transfer IMC devices</h2>
+                                <br><br><br><h2 style="color:white">Enter the TACACS Secret</h2>
+                                <div class="form-group">
+                                  <label for="tacacs" style="color:white">TACACS Secret:</label>
+                                  <input type="password" required placeholder="secret key" class="form-control" id="tacacs" name="tacacs">
+                                </div>
                                 <h1 style="color:white">Proceed with caution!!</h1>
-                                <h3 style="color:red">Dange Will Robinson!!!</h3>
+                                <h3 style="color:red">Danger Will Robinson!!!</h3>
 
                             </div>
                             <div>

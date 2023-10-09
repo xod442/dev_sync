@@ -1,0 +1,9 @@
+description >> typeName
+name >> typeName
+name >> sysName
+coaPort >> "3799"
+RadSecEnabled >> "false"
+CoaCapable >> "true"
+VendorName >> symbolName
+tacacsSecret >> tacacs (variable)
+ipAddress >> ip

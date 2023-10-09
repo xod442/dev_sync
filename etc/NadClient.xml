@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<TipsContents xmlns="http://www.avendasys.com/tipsapiDefs/1.0">
+  <TipsHeader exportTime="Wed Oct 04 16:15:56 IST 2023" version="6.11"/>
+  <NadClients>
+    <NadClient description="" name="Cisco_WLC_01" coaPort="3799" radsecEnabled="false" coaCapable="true" vendorName="Cisco" tacacsSecret="" radiusSecret="" ipAddress="10.0.233.1">
+      <SnmpConfig onConnectPorts="" zone="default" onConnectEnforcement="false" readArpInfo="true" defaultVlan="790">
+        <SnmpRead communityString="" snmpVersion="V2C"/>
+        <SnmpWrite communityString="" snmpVersion="V2C"/>
+      </SnmpConfig>
+      <CLIConfig enablePassword="" commandPromptRegex="" passwordPromptRegex="" password="" username="testuser" port="22" type="SSH"/>
+    </NadClient>
+    <NadClient description="Switch 5130 tacacs test" name="Merlin 5130 Tacacs Test" coaPort="3799" radsecEnabled="false" coaCapable="true" vendorName="Hewlett-Packard-Enterprise" tacacsSecret="" radiusSecret="" ipAddress="10.121.15.243"/>
+    <NadClient description="Switch 5510 tacacs test" name="Merlin 5510 Tacacs Test" coaPort="3799" radsecEnabled="false" coaCapable="true" vendorName="Hewlett-Packard-Enterprise" tacacsSecret="" radiusSecret="" ipAddress="10.121.15.241"/>
+    <NadClient description="Switch 2930 tacacs test" name="Merlin Aruba Tacacs Test" coaPort="3799" radsecEnabled="false" coaCapable="true" vendorName="Hewlett-Packard-Enterprise" tacacsSecret="" radiusSecret="" ipAddress="10.121.15.242"/>
+    <NadClient description="Cisco WLAN 01" name="Cisco WLAN 01" nadGroups="Cisco WLAN" coaPort="3799" radsecEnabled="false" coaCapable="true" vendorName="Cisco" tacacsSecret="" radiusSecret="" ipAddress="10.0.233.1/32"/>
+    <NadClient description="Cisco WLAN 02" name="Cisco WLAN 02" nadGroups="Cisco WLAN" coaPort="3799" radsecEnabled="false" coaCapable="true" vendorName="Cisco" tacacsSecret="" radiusSecret="" ipAddress="10.0.233.2/32"/>
+    <NadClient description="Cisco WLAN 03" name="Cisco WLAN 03" nadGroups="Cisco WLAN" coaPort="3799" radsecEnabled="false" coaCapable="true" vendorName="Cisco" tacacsSecret="" radiusSecret="" ipAddress="10.0.233.3/32"/>
+    <NadClient description="5130 test switch - DSH - Tacacs test" name="DSH_CP_TEST_5130" nadGroups="DSH - HPE Comware Switch" coaPort="3799" radsecEnabled="false" coaCapable="true" vendorName="Hewlett-Packard-Enterprise" tacacsSecret="" radiusSecret="" ipAddress="10.79.0.100"/>
+    <NadClient description="5520 test switch - DSH - Tacacs test" name="DSH_CP_TEST_5520" nadGroups="DSH - HPE Comware Switch" coaPort="3799" radsecEnabled="false" coaCapable="true" vendorName="Hewlett-Packard-Enterprise" tacacsSecret="" radiusSecret="" ipAddress="10.79.0.101"/>
+  </NadClients>
+</TipsContents>
