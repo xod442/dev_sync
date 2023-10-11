@@ -40,7 +40,7 @@ def nadclient(dev,tacacs):
         dev['typeName'] = "Not an SMNP Device"
     description = dev['typeName']
     if dev['sysName'] == "":
-        dev['sysName'] = "No system name found imn IMC"
+        dev['sysName'] = "No system name found in IMC"
     name = dev['sysName']
     coaPort = "3799"
     radsecEnabled = "false"

@@ -91,10 +91,12 @@ def cp(cp_info,dev,tacacs):
            "coa_port": "3799"
            }
 
-    response = ApiPolicyElements.new_network_device(login,body=network_device)
+    response = 'skipping desktop.............'
+    if dev['devCategoryImgSrc'] != 'desktop':
+        response = ApiPolicyElements.new_network_device(login,body=network_device)
 
-    #logging.warning(network_device)
-    #logging.warning("\n")
+    logging.warning(response)
+    logging.warning("\n")
 
     #logging.warning(response)
 
