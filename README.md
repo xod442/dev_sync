@@ -22,6 +22,10 @@ Not to be confused with /opt, they are two different thing :-)
 % cd dev_sync
 dev_sync%  docker-compose up -d
 ```
+
+# Populate client_credentials
+Use the menu to add the IMC credentials as well as the clearpass clientid and radiusSecret
+
 # Gotcha's
 Running behind a proxy. You need to add all of the networks that are internal to the no_proxy
 in the Dockerfile. Currently it is configured for my labs networks.

@@ -5,3 +5,4 @@ ipaddress
 pycentral
 urllib3
 datetime
+pyclearpass

@@ -28,21 +28,6 @@ SOFTWARE.
 
 Note: A script to transfer device information from IMC to Clearpass
 
-
-
-Sample NadClient entry. Can be used to bulk load Clearpass
-
-<NadClient
-description="Switch 5130 tacacs test"
-name="Merlin 5130 Tacacs Test"
-coaPort="3799"
-radsecEnabled="false"
-coaCapable="true"
-vendorName="Hewlett-Packard-Enterprise"
-tacacsSecret=""
-radiusSecret=""
-ipAddress="10.121.15.243"/>
-
 '''
 from bson.json_util import dumps
 from bson.json_util import loads
@@ -52,8 +37,8 @@ import requests
 from pyarubaimc.auth import *
 from pyarubaimc.device import *
 from utility.nad_client import nadclient
+from utility.cp import cp
 import logging
-
 
 
 #Script to get all logs from database
@@ -63,17 +48,16 @@ def transfer_devs(imc_info=None,cp_info=None,tacacs=None):
 
     f = open("nadclient.xml","w")
 
-    logging.basicConfig(filename="devsync.log",
+    logging.basicConfig(filename="dev.log",
     					format='%(asctime)s %(message)s',
     					filemode='a')
 
-    info = [imc_info,cp_info,tacacs]
 
-    imc_ip = info[0][1]
-    imc_user = info[0][2]
-    imc_password = info[0][3]
 
-    status = "Fetched Devices from IMC"
+    imc_ip = imc_info[1]
+    imc_user = imc_info[2]
+    imc_password = imc_info[3]
+
 
     # Configuring a connection to the VSD API
 
@@ -93,20 +77,25 @@ def transfer_devs(imc_info=None,cp_info=None,tacacs=None):
     except:
         status = "Failure to communicate with IMC"
 
+
     for dev in dev_list:
 
-        nad_client = nadclient(dev,tacacs)
+        # Create a NadClient XML entry and write to file.
+        # nad_client = nadclient(dev,tacacs)
 
-        logging.warning(nad_client)
-        logging.warning("\n")
+        #logging.warning(nad_client)
+        #logging.warning("\n")
 
-        f.write(nad_client)
-        f.write("\n")
+        # f.write(nad_client)
+        # f.write("\n")
+
+        # Write the device to clearpass
+        response = cp(cp_info,dev,tacacs)
 
         device_counter = device_counter + 1
 
     f.close
 
-    status = "Fetched Devices from IMC"
+    status = "Fetched Devices from IMC and transfered to ClearPass"
         #for alarm in alarms:
     return status, device_counter

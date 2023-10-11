@@ -46,7 +46,7 @@ def nadclient(dev,tacacs):
     radsecEnabled = "false"
     coaCapable = "true"
     if dev['symbolName'] == "":
-        dev['symbolName'] = "No Vendor Name"
+        dev['symbolName'] = "Unix"
     vendorName = dev['symbolName']
     tacacsSecret = tacacs
     radiusSecret = ""
