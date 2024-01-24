@@ -1,5 +1,5 @@
 # dev_sync
-Very simple flask application that assists in rapidly resetting the vLab configurations.
+Very simple flask application that assists in collecting device information from IMC and adding it to ClearPass.
 
 
 Installation:
@@ -13,6 +13,9 @@ Installation:
 [Install Docker Desktop](https://www.docker.com/products/docker-desktop)
 
 Works well with docker-desktop for macbook
+
+
+Or just straight up docker and docker compose on a ubuntu workstation....DO NOT USE UBUNTU SERVER
 
 ```
 Go to you place where you save you git projects, I use /home/user/opt.
