@@ -61,7 +61,7 @@ def transfer_devs(imc_info=None,cp_info=None,tacacs=None):
 
     # Configuring a connection to the VSD API
 
-    auth = IMCAuth("http://", imc_ip, "8080", imc_user, imc_password)
+    auth = IMCAuth("https://", imc_ip, "8443", imc_user, imc_password)
 
     # IMC has a habit of denying the first request...try twice!
     # Get devices from IMC
